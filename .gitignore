@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 
 #ignoring dataset
-research/Chest_CT_Scan_Data/
+C:\Users\zainulabideen\Desktop\Chest_Cancer_Classification_Mlflow_and_DVC\research\Chest_CT_Scan_Data
 
 # C extensions
 *.so
