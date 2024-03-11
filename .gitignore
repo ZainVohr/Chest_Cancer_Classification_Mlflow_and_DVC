@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+#ignoring dataset
+research/Chest_CT_Scan_Data/
+
 # C extensions
 *.so
 
