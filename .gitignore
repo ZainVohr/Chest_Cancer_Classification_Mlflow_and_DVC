@@ -5,6 +5,7 @@ __pycache__/
 
 #ignoring dataset
 Chest_CT_Scan_Data
+/main.py
 
 
 # C extensions
