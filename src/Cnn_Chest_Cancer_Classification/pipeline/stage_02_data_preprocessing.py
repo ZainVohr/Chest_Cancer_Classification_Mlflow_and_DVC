@@ -12,8 +12,8 @@ class DataPreprocessingTrainingPipeline:
     
     def main(self):
        try:
-        config2 = ConfigurationManager()
-        data_dirs = config2.get_data_directories_config()
+        config = ConfigurationManager()
+        data_dirs = config.get_data_directories_config()
         preprocessed_data= ImageDataLoader(*data_dirs) #Passing *data_directories allows you to unpack the tuple data_directories and pass its elements as individual arguments to the ImageDataLoader constructor. data_directories = ("path/to/train", "path/to/valid", "path/to/test")  data_loader = ImageDataLoader(base_dir, *data_directories)
         train_generator, valid_generator, test_generator = preprocessed_data.get_image_data_generators()
         visualize_images(train_generator)
