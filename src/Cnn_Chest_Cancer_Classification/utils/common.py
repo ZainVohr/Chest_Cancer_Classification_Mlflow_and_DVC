@@ -10,7 +10,7 @@ from box import ConfigBox
 from pathlib import Path
 from typing import Any
 import base64
-
+import matplotlib.pyplot as plt
 
 
 @ensure_annotations
@@ -136,3 +136,13 @@ def decodeImage(imgstring, fileName):
 def encodeImageIntoBase64(croppedImagePath):
     with open(croppedImagePath, "rb") as f:
         return base64.b64encode(f.read())
+
+def visualize_images(generator, num_images=12):
+    images, labels = generator.next()
+    plt.figure(figsize=(10, 10))
+    for i in range(num_images):
+        plt.subplot(4, 4, i + 1)
+        plt.imshow(images[i])
+        plt.title('Class: {}'.format(labels[i]))
+        plt.axis('off')
+    plt.show()
