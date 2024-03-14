@@ -35,7 +35,7 @@ class ImageDataLoader:
             target_size=self.image_size,
             batch_size=self.batch_size,
             class_mode='categorical' if directory != self.test_dir else None,
-            shuffle=shuffle
+            shuffle=shuffle,
         )
 
 
