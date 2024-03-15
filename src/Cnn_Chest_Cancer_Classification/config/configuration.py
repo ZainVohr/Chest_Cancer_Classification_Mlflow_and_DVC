@@ -1,6 +1,7 @@
 from Cnn_Chest_Cancer_Classification.constants import *
 from Cnn_Chest_Cancer_Classification.utils.common import read_yaml , create_directories
 from Cnn_Chest_Cancer_Classification.entity.config_entity import DataIngestionConfig
+from Cnn_Chest_Cancer_Classification.entity.config_entity import PrepareBaseModelConfig
 import os
 class ConfigurationManager:
     def __init__( self,config_filepath = CONFIG_FILE_PATH, params_filepath = PARAMS_FILE_PATH):
@@ -28,5 +29,20 @@ class ConfigurationManager:
             valid_dir = os.path.join(base_dir, data_dirs.get("valid_dir"))
             test_dir = os.path.join(base_dir, data_dirs.get("test_dir"))
             return train_dir, valid_dir, test_dir
-
+    
+    def get_prepare_base_model_config(self)->PrepareBaseModelConfig:
+          config = self.config.prepare_base_model
+          create_directories([config.root_dir])
+          
+          prepare_base_model_config = PrepareBaseModelConfig(
+          root_dir = Path(config.root_dir),
+          base_model_path = Path(config.base_model_path),
+          updated_base_model_path= Path(config.updated_base_model_path),
+          params_image_size= self.params.IMAGE_SIZE,
+          params_learning_rate= self.params.LEARNING_RATE,
+          params_include_top= self.params.INCLUDE_TOP,
+          params_weights= self.params.WEIGHTS,
+          params_classes= self.params.CLASSES,
+          )
+          return prepare_base_model_config
     
