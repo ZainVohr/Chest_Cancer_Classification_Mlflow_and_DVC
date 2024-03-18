@@ -3,9 +3,11 @@ artifacts_root: artifacts
 
 data_ingestion:
   root_dir: artifacts/data_ingestion
-  source_URL: https://drive.google.com/file/d/1rWs_t3ebYvBVyUc_rK_KwhmyYIlcisM1/view?usp=drive_link
+  source_URL: https://drive.google.com/file/d/1vYsVwYm6PvI2X88WnaXXkEcg4RxMcm2G/view?usp=drive_link
   local_data_file: artifacts/data_ingestion/data.zip
   unzip_dir: artifacts/data_ingestion
+  data: artifacts/data_ingestion/Chest-CT-Scan-data
+
 
 
 data_preprocessing:
@@ -22,3 +24,7 @@ prepare_base_model:
   root_dir: artifacts/prepare_base_model
   base_model_path: artifacts/prepare_base_model/base_model.h5
   updated_base_model_path: artifacts/prepare_base_model/base_model_updated.h5
+
+training:
+  root_dir: artifacts/training
+  trained_model_path: artifatcs/training/model.h5

@@ -4,36 +4,37 @@ from Cnn_Chest_Cancer_Classification.pipeline.stage_02_data_preprocessing import
 
 
 
-# STAGE_NAME = "Data Igestion Pipeline"
+STAGE_NAME = "Data Igestion Pipeline"
 
-# try:
-#     logger.info(f">>>>>>> stage {STAGE_NAME} started <<<<<<<<<<<<<")
-#     obj = DataIngestionTrainingPipeline()
-#     obj.main()
-#     logger.info(f'>>>>>>>>> stage {STAGE_NAME} completed <<<<<<<<<<\n\nx================x================x')
-# except Exception as e:
-#     raise e
+try:
+     logger.info(f">>>>>>> stage {STAGE_NAME} started <<<<<<<<<<<<<")
+     obj = DataIngestionTrainingPipeline()
+     obj.main()
+     logger.info(f'>>>>>>>>> stage {STAGE_NAME} completed <<<<<<<<<<\n\nx================x================x')
+except Exception as e:
+     raise e
 
 
-#STAGE_NAME = "Data Preprocessing Stage"
 
-#if __name__ == '__main__':
-#    try:
-#        logger.info(f">>>>>>> stage {STAGE_NAME} started <<<<<<<<<<<<<")
-#        obj = DataPreprocessingTrainingPipeline()
-#        obj.main()
-#        logger.info(f'>>>>>>>>> stage {STAGE_NAME} completed <<<<<<<<<<\n\nx================x================x')
-#    except Exception as e:
-#        raise e
     
 from Cnn_Chest_Cancer_Classification import logger
 from Cnn_Chest_Cancer_Classification.pipeline.stage_03_prepare_base_model import PreparingBaseModelTrainingPipeline
 STAGE_NAME = "Prepare Base Model"
-if __name__ == '__main__':
-    try:
+try:
+       logger.info(f">>>>>>> stage {STAGE_NAME} started <<<<<<<<<<<<<")
+       obj = PreparingBaseModelTrainingPipeline()
+       obj.main()
+       logger.info(f'>>>>>>>>> stage {STAGE_NAME} completed <<<<<<<<<<\n\nx================x================x')
+except Exception as e:
+        raise e
+
+from Cnn_Chest_Cancer_Classification.pipeline.stage_04_model_trainer import ModelTrainingPipeline
+STAGE_NAME = "Model training"
+#if __name__ == '__main__':
+try:
         logger.info(f">>>>>>> stage {STAGE_NAME} started <<<<<<<<<<<<<")
-        obj = PreparingBaseModelTrainingPipeline()
+        obj = ModelTrainingPipeline()
         obj.main()
         logger.info(f'>>>>>>>>> stage {STAGE_NAME} completed <<<<<<<<<<\n\nx================x================x')
-    except Exception as e:
+except Exception as e:
         raise e
