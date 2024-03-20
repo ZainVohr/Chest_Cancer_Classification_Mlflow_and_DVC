@@ -69,7 +69,7 @@ stages:
       params.yaml:
         AUGMENTATION: true
         BATCH_SIZE: 16
-        EPOCHS: 4
+        EPOCHS: 3
         IMAGE_SIZE:
         - 224
         - 224
@@ -77,7 +77,7 @@ stages:
     outs:
     - path: artifacts/training/model.h5
       hash: md5
-      md5: 1a49cc92481e43da9f465cefaad5e88d
+      md5: fff2d0cb4f886fc8bf896edd0f6bf7e6
       size: 59337520
   evaluation:
     cmd: python src/Cnn_Chest_Cancer_Classification/pipeline/stage_05_model_evaluation_mlflow.py
@@ -89,7 +89,7 @@ stages:
       nfiles: 343
     - path: artifacts/training/model.h5
       hash: md5
-      md5: 1a49cc92481e43da9f465cefaad5e88d
+      md5: fff2d0cb4f886fc8bf896edd0f6bf7e6
       size: 59337520
     - path: config/config.yaml
       hash: md5
@@ -97,8 +97,8 @@ stages:
       size: 917
     - path: src/Cnn_Chest_Cancer_Classification/pipeline/stage_05_model_evaluation_mlflow.py
       hash: md5
-      md5: 793435a6dc007bf49702b708366add22
-      size: 1071
+      md5: 40269217d84f6ac59a5f00752b62e17a
+      size: 1070
     params:
       params.yaml:
         BATCH_SIZE: 16
@@ -109,5 +109,5 @@ stages:
     outs:
     - path: scores.json
       hash: md5
-      md5: 308cd7b27203d0fa3255f22c5b9e2d85
+      md5: ab40babcc3d09d2c7a59d644c13433b0
       size: 72
